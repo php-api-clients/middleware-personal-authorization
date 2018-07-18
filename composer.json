@@ -31,7 +31,10 @@
     }
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "platform": {
+      "php": "7.0.9"
+    }
   },
   "scripts": {
     "ensure-installed": "composer install --ansi -n -q",
