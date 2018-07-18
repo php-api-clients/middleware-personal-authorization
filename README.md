@@ -1,6 +1,6 @@
 # Personal authorization middleware
 
-[![Build Status](https://travis-ci.org/php-api-clients/middleware-personal-authorization.svg?branch=master)](https://travis-ci.org/php-api-clients/middleware-personal-authorization)
+[![Build Status](https://travis-ci.com/php-api-clients/middleware-personal-authorization.svg?branch=master)](https://travis-ci.com/php-api-clients/middleware-personal-authorization)
 [![Latest Stable Version](https://poser.pugx.org/api-clients/middleware-personal-authorization/v/stable.png)](https://packagist.org/packages/api-clients/middleware-personal-authorization)
 [![Total Downloads](https://poser.pugx.org/api-clients/middleware-personal-authorization/downloads.png)](https://packagist.org/packages/api-clients/middleware-personal-authorization)
 [![Code Coverage](https://scrutinizer-ci.com/g/php-api-clients/middleware-personal-authorization/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-api-clients/middleware-personal-authorization/?branch=master)
