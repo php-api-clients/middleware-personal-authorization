@@ -4,7 +4,7 @@ Pull requests are highly appreciated. Here's a quick guide.
 
 Fork, then clone the repo:
 
-    git clone git@github.com:your-username/middleware-bearer-authorization.git
+    git clone git@github.com:your-username/middleware-personal-authorization.git
 
 Set up your machine:
 

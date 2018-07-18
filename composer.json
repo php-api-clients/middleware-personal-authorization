@@ -1,7 +1,6 @@
 {
-  "name": "api-clients/middleware-bearer-authorization",
-  "homepage": "https://php-api-clients.org/clients/travis/",
-  "description": "Bearer authorization middleware",
+  "name": "api-clients/middleware-personal-authorization",
+  "description": "Personal authorization middleware",
   "license": "MIT",
   "authors": [
     {
