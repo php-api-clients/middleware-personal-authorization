@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Tests\Middleware\BearerAuthorization;
+namespace ApiClients\Tests\Middleware\PersonalAuthorization;
 
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use ApiClients\Middleware\BearerAuthorization\BearerAuthorizationHeaderMiddleware;
-use ApiClients\Middleware\BearerAuthorization\Options;
+use ApiClients\Middleware\PersonalAuthorization\PersonalAuthorizationHeaderMiddleware;
+use ApiClients\Middleware\PersonalAuthorization\Options;
 use function Clue\React\Block\await;
 use function React\Promise\resolve;
 
-final class BearerAuthorizationHeaderMiddlewareTest extends TestCase
+final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
 {
     public function preProvider()
     {
@@ -22,7 +22,7 @@ final class BearerAuthorizationHeaderMiddlewareTest extends TestCase
 
         yield [
             [
-                BearerAuthorizationHeaderMiddleware::class => [
+                PersonalAuthorizationHeaderMiddleware::class => [
                     Options::TOKEN => '',
                 ],
             ],
@@ -32,7 +32,7 @@ final class BearerAuthorizationHeaderMiddlewareTest extends TestCase
 
         yield [
             [
-                BearerAuthorizationHeaderMiddleware::class => [
+                PersonalAuthorizationHeaderMiddleware::class => [
                     Options::TOKEN => null,
                 ],
             ],
@@ -42,12 +42,12 @@ final class BearerAuthorizationHeaderMiddlewareTest extends TestCase
 
         yield [
             [
-                BearerAuthorizationHeaderMiddleware::class => [
+                PersonalAuthorizationHeaderMiddleware::class => [
                     Options::TOKEN => 'kroket',
                 ],
             ],
             true,
-            'Bearer kroket'
+            'Personal kroket'
         ];
     }
 
@@ -57,7 +57,7 @@ final class BearerAuthorizationHeaderMiddlewareTest extends TestCase
     public function testPre(array $options, bool $hasHeader, string $expectedHeader)
     {
         $request = new Request('GET', 'https://example.com/');
-        $middleware = new BearerAuthorizationHeaderMiddleware();
+        $middleware = new PersonalAuthorizationHeaderMiddleware();
         $changedRequest = await($middleware->pre($request, 'abc', $options), Factory::create());
 
         if ($hasHeader === false) {

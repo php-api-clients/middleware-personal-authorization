@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace ApiClients\Middleware\BearerAuthorization;
+namespace ApiClients\Middleware\PersonalAuthorization;
 
 use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
 use ApiClients\Foundation\Middleware\ErrorTrait;
@@ -13,7 +13,7 @@ use function React\Promise\resolve;
 /**
  * Middleware that adds the authorization header in the token format.
  */
-class BearerAuthorizationHeaderMiddleware implements MiddlewareInterface
+class PersonalAuthorizationHeaderMiddleware implements MiddlewareInterface
 {
     use PostTrait;
     use ErrorTrait;
@@ -39,7 +39,7 @@ class BearerAuthorizationHeaderMiddleware implements MiddlewareInterface
         return resolve(
             $request->withAddedHeader(
                 'Authorization',
-                'Bearer ' . $options[self::class][Options::TOKEN]
+                'Personal ' . $options[self::class][Options::TOKEN]
             )
         );
     }

@@ -23,12 +23,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ApiClients\\Middleware\\BearerAuthorization\\": "src/"
+      "ApiClients\\Middleware\\PersonalAuthorization\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ApiClients\\Tests\\Middleware\\BearerAuthorization\\": "tests/"
+      "ApiClients\\Tests\\Middleware\\PersonalAuthorization\\": "tests/"
     }
   },
   "config": {
