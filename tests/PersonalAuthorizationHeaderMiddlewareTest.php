@@ -2,14 +2,16 @@
 
 namespace ApiClients\Tests\Middleware\PersonalAuthorization;
 
+use ApiClients\Middleware\PersonalAuthorization\Options;
+use ApiClients\Middleware\PersonalAuthorization\PersonalAuthorizationHeaderMiddleware;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use ApiClients\Middleware\PersonalAuthorization\PersonalAuthorizationHeaderMiddleware;
-use ApiClients\Middleware\PersonalAuthorization\Options;
 use function Clue\React\Block\await;
-use function React\Promise\resolve;
 
+/**
+ * @internal
+ */
 final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
 {
     public function preProvider()
@@ -17,7 +19,7 @@ final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
         yield [
             [],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -27,7 +29,7 @@ final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -37,7 +39,7 @@ final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             false,
-            ''
+            '',
         ];
 
         yield [
@@ -47,14 +49,14 @@ final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
                 ],
             ],
             true,
-            'Personal kroket'
+            'Personal kroket',
         ];
     }
 
     /**
      * @dataProvider preProvider
      */
-    public function testPre(array $options, bool $hasHeader, string $expectedHeader)
+    public function testPre(array $options, bool $hasHeader, string $expectedHeader): void
     {
         $request = new Request('GET', 'https://example.com/');
         $middleware = new PersonalAuthorizationHeaderMiddleware();
@@ -62,6 +64,7 @@ final class PersonalAuthorizationHeaderMiddlewareTest extends TestCase
 
         if ($hasHeader === false) {
             self::assertFalse($changedRequest->hasHeader('Authorization'));
+
             return;
         }
 
