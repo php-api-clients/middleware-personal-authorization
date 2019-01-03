@@ -2,7 +2,6 @@
 
 namespace ApiClients\Middleware\PersonalAuthorization;
 
-use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
@@ -19,8 +18,8 @@ class PersonalAuthorizationHeaderMiddleware implements MiddlewareInterface
     use ErrorTrait;
 
     /**
-     * @param RequestInterface $request
-     * @param array $options
+     * @param  RequestInterface            $request
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      */
     public function pre(
