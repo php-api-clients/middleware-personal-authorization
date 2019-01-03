@@ -5,9 +5,9 @@ namespace ApiClients\Tests\Middleware\PersonalAuthorization;
 use ApiClients\Middleware\PersonalAuthorization\Options;
 use ApiClients\Middleware\PersonalAuthorization\PersonalAuthorizationHeaderMiddleware;
 use ApiClients\Tools\TestUtilities\TestCase;
+use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use function Clue\React\Block\await;
 
 /**
  * @internal
